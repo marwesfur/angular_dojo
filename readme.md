@@ -1,7 +1,7 @@
 Dojo integration for Angular.js
 ===============================
 
-The trick is to use a generic directive, `bindDojoType`, that instantiates Dojo Widgets and sets up bindings. 
+The trick is to use a generic directive, `bindDojoType`, that instantiates Dojo Widgets and sets up bindings (in HTML you simply write `bind-dojo-type` instead of `dojo-type`).
 `bindDojoType` is implemented based on the code of the dojo parser and therefore supports mixins.
 It evaluates the `dojoProps` attribute in the current scope. Different binding types are supported:
 
