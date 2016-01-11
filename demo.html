@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularDojo</title>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css" media="screen">
+</head>
+<body class="claro">
+
+<div data-bind-dojo-type="dijit/form/TextBox"
+     data-dojo-props="trim: true"
+     data-bind-value="model: name, onChange: changeCounter = changeCounter+1"></div>
+
+Name: {{name || '&lt;empty&gt;'}} (times changed: {{changeCounter}})
+
+<br>
+
+<div data-bind-dojo-type="dijit/form/Button"
+     data-dojo-mixins="mixins/_VisibilityMixin"
+     data-dojo-props="label: 'Reset name'"
+     data-bind-oneway-disabled="!name"
+     data-bind-oneway-visible="isResetButtonVisible"
+     data-bind-fn-on-click="name = ''"></div>
+
+<br>
+
+<div id="visibilityCheckBox"
+     data-bind-dojo-type="dijit/form/CheckBox"
+     data-bind-checked="isResetButtonVisible"></div><label for="visibilityCheckBox">Show reset button</label>
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
+        data-dojo-config="async: true, packages: [{name: 'mixins', location: location.pathname.replace(/\/[^/]+$/, '') + '/mixins'}]"></script>
+<script src="bindDojoType.js"></script>
+
+<script>
+
+    require([
+        "dijit/form/TextBox",
+        "dijit/form/CheckBox",
+        "dijit/form/Button",
+        "mixins/_VisibilityMixin"
+    ], function() {
+        angular.module('demoApp', ['angularDojo']);
+        angular.bootstrap(document, ['demoApp']);
+    });
+
+</script>
+
+
+</body>
+</html>
