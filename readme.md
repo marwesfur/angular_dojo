@@ -17,4 +17,4 @@ Furthermore you can watch by value or by reference (add `byValue` in the attribu
 While this approach works very well for a broad range of dojo widgets, there some of them which are not "binding ready" out of the box. 
 Such issues can be solved with mixins. For example, _VisibilityMixin, is an alternative to `ng-show` that works directly on a widget node.
 
-See demo.html
+See [demo.html](https://rawgit.com/marwesfur/angular_dojo/master/demo.html)
